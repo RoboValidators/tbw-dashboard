@@ -2,22 +2,15 @@ import React from "react";
 
 import { Table, Space } from "antd";
 
+import { TableProps } from "../../types";
+
 const { Column } = Table;
 
-interface TransactionTableProps {
-  total: number;
-}
-
-const TransactionTable = React.memo((props: any) => {
-  console.log("ALL PROPS");
-  console.log(props);
-  console.log("ALL PROPS");
-  console.log(props.data);
-
+const TransactionTable = React.memo((props: TableProps) => {
   return (
     <Table
       dataSource={props.data.data}
-      rowKey={Math.random().toString()}
+      rowKey={() => Math.random()}
       pagination={{
         position: ["bottomRight"],
         current: props.currentPage,
@@ -33,18 +26,16 @@ const TransactionTable = React.memo((props: any) => {
         title="Amount"
         dataIndex="amount"
         key="amount"
-        sorter={(a: any, b: any) => {
-          console.log(a);
-          console.log(b);
-          return a.amount - b.amount;
-        }}
+        sorter={(a: any, b: any) => a.amount - b.amount}
       />
       <Column
         title="Transaction ID"
         key="txId"
-        render={(text, record: any) => (
+        render={(_, record: any) => (
           <Space size="middle">
-            <a href="https://google.be">{record.txId}</a>
+            <a href={`https://bindscan.io/transactions/${record.txId}`} target="_blank">
+              {record.txId}
+            </a>
           </Space>
         )}
       />

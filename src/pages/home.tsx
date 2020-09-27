@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
 
-import OverviewTable from "../components/OverviewTable";
+import OverviewTable from "../components/VoterOverviewTable";
 import TransactionTable from "../components/TransactionsTable";
 import { transactionHistoryQuery } from "../recoil/selectors";
 
@@ -13,13 +13,7 @@ const Home = React.memo(() => {
     })
   );
 
-  return (
-    <div>
-      <OverviewTable />
-      <br />
-      <TransactionTable data={txHistory} />
-    </div>
-  );
+  return <div>Lol</div>;
 });
 
 export default Home;

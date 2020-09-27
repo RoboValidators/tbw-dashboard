@@ -19,3 +19,20 @@ export const transactionHistoryQuery = selectorFamily({
     return response.data;
   }
 });
+
+export const voterOverviewQuery = selectorFamily({
+  key: "voterOverviewQuery",
+  get: ({ page, limit }: { page: number; limit: number }) => async () => {
+    const response = await axios.get(`${baseUrl}/simple`, {
+      params: {
+        page,
+        limit
+      }
+    });
+    if (response.status !== 200) {
+      return response.statusText;
+    }
+
+    return response.data;
+  }
+});

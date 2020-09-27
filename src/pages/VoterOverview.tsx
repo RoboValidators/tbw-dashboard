@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 
-import TransactionTable from "../components/TransactionsTable";
-import { transactionHistoryQuery } from "../recoil/selectors";
+import OverviewTable from "../components/VoterOverviewTable";
+
+import { voterOverviewQuery } from "../recoil/selectors";
 import { LIMIT, PAGE } from "../utils/values";
 
-const Transactions = React.memo(() => {
+const VoterOverview = React.memo(() => {
   const [currentPage, setCurrentPage] = useState(PAGE);
-  const [limit, setLimit] = useState(LIMIT);
+  const [limit, setLimit] = useState(2);
 
-  const txHistoryData = useRecoilValue(
-    transactionHistoryQuery({
+  const voterOverviewData = useRecoilValue(
+    voterOverviewQuery({
       page: currentPage,
       limit: limit
     })
@@ -25,8 +26,8 @@ const Transactions = React.memo(() => {
   };
 
   return (
-    <TransactionTable
-      data={txHistoryData}
+    <OverviewTable
+      data={voterOverviewData}
       currentPage={currentPage}
       onChangePage={onChangePage}
       onChangeLimit={onChangeLimit}
@@ -34,4 +35,4 @@ const Transactions = React.memo(() => {
   );
 });
 
-export default Transactions;
+export default VoterOverview;
