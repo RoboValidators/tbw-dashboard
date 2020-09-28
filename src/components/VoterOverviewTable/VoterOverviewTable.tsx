@@ -8,6 +8,7 @@ const { Column } = Table;
 const VoterOverviewTable = React.memo((props: TableProps) => {
   return (
     <Table
+      title={() => <h1>Voters overview</h1>}
       dataSource={props.data.data}
       rowKey={() => Math.random()}
       pagination={{
