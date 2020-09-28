@@ -9,7 +9,8 @@ const VoterOverviewTable = React.memo((props: TableProps) => {
   return (
     <Table
       title={() => <h1>Voters overview</h1>}
-      dataSource={props.data.data}
+      loading={!props.data?.data}
+      dataSource={props.data?.data}
       rowKey={() => Math.random()}
       pagination={{
         position: ["bottomRight"],
@@ -17,8 +18,8 @@ const VoterOverviewTable = React.memo((props: TableProps) => {
         onChange: props.onChangePage,
         onShowSizeChange: props.onChangeLimit,
         showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
-        total: props.data.meta.totalCount,
-        pageSize: props.data.meta.count
+        total: props.data?.meta.totalCount,
+        pageSize: props.data?.meta.count
       }}
     >
       <Column title="Wallet Address" dataIndex="wallet" ellipsis={true} width={"40%"} />

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 
-import OverviewTable from "../components/VoterOverviewTable";
+import OverviewTable from "../../components/VoterOverviewTable";
 
-import { voterOverviewQuery } from "../recoil/selectors";
-import { LIMIT, PAGE } from "../utils/values";
+import { voterOverviewQuery } from "../../recoil/selectors";
+import { LIMIT, PAGE } from "../../utils/values";
 
 const VoterOverview = React.memo(() => {
   const [currentPage, setCurrentPage] = useState(PAGE);

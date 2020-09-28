@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 
 import "./home.css";
-import VoterOverview from "./VoterOverview";
-import TransactionsOverview from "./Transactions";
+import VoterOverview from "./Voters";
+import TransactionsOverview from "./Payouts";
 
 const { Header, Content, Footer } = Layout;
 

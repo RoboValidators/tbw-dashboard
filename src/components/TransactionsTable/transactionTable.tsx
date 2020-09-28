@@ -10,8 +10,9 @@ const TransactionTable = React.memo((props: TableProps) => {
   return (
     <Table
       title={() => <h1>Payment history</h1>}
+      loading={!props.data?.data}
       rowClassName="hover"
-      dataSource={props.data.data}
+      dataSource={props.data?.data}
       rowKey={() => Math.random()}
       pagination={{
         position: ["bottomRight"],
@@ -19,8 +20,8 @@ const TransactionTable = React.memo((props: TableProps) => {
         onChange: props.onChangePage,
         onShowSizeChange: props.onChangeLimit,
         showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
-        total: props.data.meta.totalCount,
-        pageSize: props.data.meta.count
+        total: props.data?.meta.totalCount,
+        pageSize: props.data?.meta.count
       }}
       onRow={(record) => {
         return {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 
-import TransactionTable from "../components/TransactionsTable";
-import { transactionHistoryQuery } from "../recoil/selectors";
-import { LIMIT, PAGE } from "../utils/values";
+import TransactionTable from "../../components/TransactionsTable";
+import { transactionHistoryQuery } from "../../recoil/selectors";
+import { LIMIT, PAGE } from "../../utils/values";
 
-const Transactions = React.memo(() => {
+const PayoutsOverview = React.memo(() => {
   const [currentPage, setCurrentPage] = useState(PAGE);
   const [limit, setLimit] = useState(LIMIT);
 
@@ -34,4 +34,4 @@ const Transactions = React.memo(() => {
   );
 });
 
-export default Transactions;
+export default PayoutsOverview;
