@@ -2,15 +2,11 @@ import React from "react";
 
 import { Table } from "antd";
 
-import "./transactionTable.css";
-
 import { TableProps } from "../../types";
 
 const { Column } = Table;
 
 const TransactionTable = React.memo((props: TableProps) => {
-  console.log(props.data.data[0].date);
-
   return (
     <Table
       title={() => <h1>Payment history</h1>}
