@@ -20,7 +20,7 @@ const VoterOverviewTable = React.memo((props: TableProps) => {
         pageSize: props.data.meta.count
       }}
     >
-      <Column title="Wallet Address" dataIndex="wallet" ellipsis={true} />
+      <Column title="Wallet Address" dataIndex="wallet" ellipsis={true} width={"40%"} />
 
       <Column
         title="Pending balance"

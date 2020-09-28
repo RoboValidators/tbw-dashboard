@@ -1,5 +1,4 @@
 body {
-  height: 100% !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -11,15 +10,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.ant-layout {
-  height: 100%;
-}
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 0px !important;
+  }
 
-main {
-  min-height: 100%;
-  height: 100%;
+  footer {
+    padding: 10px 20px !important;
+  }
+
+  .site-layout-content {
+    padding: 8px !important;
+  }
 }
 
 #root {
-  height: 100%;
+  height: -webkit-fill-available;
+}
+
+section {
+  height: -webkit-fill-available;
+}
+
+main {
+  height: -webkit-fill-available;
+  overflow: auto;
+}
+
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
 }

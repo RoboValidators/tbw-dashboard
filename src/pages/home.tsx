@@ -22,7 +22,7 @@ const Home = React.memo(() => {
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        Robo Validators ©2020 Created by Bindie The Validator
+        Robo Validators ©2020 Created by Bindie. <br /> Like this site? Consider voting for Bindie
       </Footer>
     </Layout>
   );
