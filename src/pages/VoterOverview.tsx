@@ -8,7 +8,7 @@ import { LIMIT, PAGE } from "../utils/values";
 
 const VoterOverview = React.memo(() => {
   const [currentPage, setCurrentPage] = useState(PAGE);
-  const [limit, setLimit] = useState(2);
+  const [limit, setLimit] = useState(LIMIT);
 
   const voterOverviewData = useRecoilValue(
     voterOverviewQuery({

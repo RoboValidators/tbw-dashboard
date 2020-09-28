@@ -1,19 +1,31 @@
 import React from "react";
-import { useRecoilValue } from "recoil";
+import { Layout, Menu } from "antd";
 
-import OverviewTable from "../components/VoterOverviewTable";
-import TransactionTable from "../components/TransactionsTable";
-import { transactionHistoryQuery } from "../recoil/selectors";
+import "./home.css";
+import VoterOverview from "./VoterOverview";
+
+const { Header, Content, Footer } = Layout;
 
 const Home = React.memo(() => {
-  const txHistory = useRecoilValue(
-    transactionHistoryQuery({
-      page: 1,
-      limit: 3
-    })
+  return (
+    <Layout className="layout">
+      <Header>
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+          <Menu.Item key="1">Voters overview</Menu.Item>
+          <Menu.Item key="2">Payouts</Menu.Item>
+        </Menu>
+      </Header>
+      <Content style={{ padding: "0 50px" }}>
+        <div className="site-layout-content">
+          <VoterOverview />
+        </div>
+      </Content>
+      <Footer style={{ textAlign: "center" }}>
+        Robo Validators ©2020 Created by Bindie The Validator
+      </Footer>
+    </Layout>
   );
-
-  return <div>Lol</div>;
 });
 
 export default Home;

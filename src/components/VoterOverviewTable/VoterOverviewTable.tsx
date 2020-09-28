@@ -20,17 +20,21 @@ const VoterOverviewTable = React.memo((props: TableProps) => {
         pageSize: props.data.meta.count
       }}
     >
-      <Column title="Wallet Address" dataIndex="wallet" />
+      <Column title="Wallet Address" dataIndex="wallet" ellipsis={true} />
 
       <Column
-        title="Pending BIND Balance"
+        title="Pending balance"
         dataIndex="pendingBalance"
         sorter={(a: any, b: any) => a.pendingBalance - b.pendingBalance}
+        ellipsis={true}
+        render={(value) => `ß ${value}`}
       />
       <Column
-        title="Paid BIND Balance"
+        title="Paid balance"
         dataIndex="paidBalance"
         sorter={(a: any, b: any) => a.paidBalance - b.paidBalance}
+        responsive={["xxl", "xl", "lg", "md", "sm"]}
+        render={(value) => `ß ${value}`}
       />
     </Table>
   );

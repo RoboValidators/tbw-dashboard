@@ -1,0 +1,16 @@
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+
+  height: 100%; /* IE6: treaded as min-height*/
+
+  min-height: 100%; /* real browsers */
+}
+
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
