@@ -1,7 +1,7 @@
 import axios from "axios";
 import { selectorFamily } from "recoil";
 
-const baseUrl = "http://localhost:4000";
+const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
 
 export const transactionHistoryQuery = selectorFamily({
   key: "transactionHistoryQuery",

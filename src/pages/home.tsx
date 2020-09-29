@@ -43,7 +43,7 @@ const Home = React.memo(() => {
           selectedKeys={[selectedOverview]}
         >
           <Menu.Item key={OVERVIEW_VOTERS}>Voters overview</Menu.Item>
-          <Menu.Item key={OVERVIEW_TRANSACTIONS}>Payouts</Menu.Item>
+          <Menu.Item key={OVERVIEW_TRANSACTIONS}>Payout history</Menu.Item>
         </Menu>
       </Header>
       <Content style={{ padding: "0 50px" }}>
