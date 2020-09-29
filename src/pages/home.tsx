@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 
 import "./home.css";
-import VoterOverview from "./Voters";
-import TransactionsOverview from "./Payouts";
+
+const VoterOverview = React.lazy(() => import("./Payouts"));
+const TransactionsOverview = React.lazy(() => import("./Voters"));
 
 const { Header, Content, Footer } = Layout;
 
@@ -36,14 +37,13 @@ const Home = React.memo(() => {
     <Layout className="layout">
       <Header>
         <div className="logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          onClick={handleNavigate}
-          selectedKeys={[selectedOverview]}
-        >
-          <Menu.Item key={OVERVIEW_VOTERS}>Voters overview</Menu.Item>
-          <Menu.Item key={OVERVIEW_TRANSACTIONS}>Payout history</Menu.Item>
+        <Menu theme="dark" mode="horizontal" selectedKeys={[selectedOverview]}>
+          <Menu.Item key={OVERVIEW_VOTERS} onClick={handleNavigate}>
+            Voters overview
+          </Menu.Item>
+          <Menu.Item key={OVERVIEW_TRANSACTIONS} onClick={handleNavigate}>
+            Payout history
+          </Menu.Item>
         </Menu>
       </Header>
       <Content style={{ padding: "0 50px" }}>
