@@ -1,0 +1,13 @@
+.logo {
+  width: 64px;
+  height: 64px;
+  background-image: url("../logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0px 16px;
+  float: left;
+}
+
+.hover {
+  cursor: pointer;
+}

@@ -1,12 +1,9 @@
 import React from "react";
 
-import "./App.css";
-
-// import Home from "./pages/home";
-import Transactions from "./pages/Transactions";
+import Home from "./pages/home";
 
 function App() {
-  return <Transactions />;
+  return <Home />;
 }
 
 export default App;
