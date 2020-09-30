@@ -25,7 +25,8 @@ const TransactionTable = React.memo((props: TableProps) => {
       }}
       onRow={(record) => {
         return {
-          onClick: () => window.open(`https://bindscan.io/transactions/${record.txId}`)
+          onClick: () =>
+            window.open(`${process.env.REACT_APP_BINDSCAN_URL}/transactions/${record.txId}`)
         };
       }}
     >
