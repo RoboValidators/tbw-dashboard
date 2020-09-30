@@ -37,13 +37,14 @@ const Home = React.memo(() => {
     <Layout className="layout">
       <Header>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" selectedKeys={[selectedOverview]}>
-          <Menu.Item key={OVERVIEW_VOTERS} onClick={handleNavigate}>
-            Voters overview
-          </Menu.Item>
-          <Menu.Item key={OVERVIEW_TRANSACTIONS} onClick={handleNavigate}>
-            Payout history
-          </Menu.Item>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          selectedKeys={[selectedOverview]}
+          onClick={handleNavigate}
+        >
+          <Menu.Item key={OVERVIEW_VOTERS}>Voters overview</Menu.Item>
+          <Menu.Item key={OVERVIEW_TRANSACTIONS}>Payout history</Menu.Item>
         </Menu>
       </Header>
       <Content style={{ padding: "0 50px" }}>
