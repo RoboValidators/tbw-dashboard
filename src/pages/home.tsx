@@ -3,13 +3,13 @@ import { Layout, Menu } from "antd";
 
 import "./home.css";
 
-const VoterOverview = React.lazy(() => import("./Payouts"));
-const TransactionsOverview = React.lazy(() => import("./Voters"));
+const VoterOverview = React.lazy(() => import("./Voters"));
+const TransactionsOverview = React.lazy(() => import("./Payouts"));
 
 const { Header, Content, Footer } = Layout;
 
-const OVERVIEW_VOTERS = "1";
-const OVERVIEW_TRANSACTIONS = "2";
+const OVERVIEW_VOTERS = "OVERVIEW_VOTERS";
+const OVERVIEW_TRANSACTIONS = "OVERVIEW_TRANSACTIONS";
 const OVERVIEW_KEY = "overview";
 
 const Home = React.memo(() => {
@@ -51,7 +51,14 @@ const Home = React.memo(() => {
         <div className="site-layout-content">{renderOverview()}</div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-        Robo Validators ©2020 Created by Bindie. <br /> Like this site? Consider voting for Bindie
+        Robo Validators ©2020 Created by Bindie. <br /> Like this site?{" "}
+        <a
+          href="https://bindscan.io/wallets/cU3kVS8sgH4E4hcyaUEQ6DtxwJo2Y4L8iP"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Consider voting for Bindie
+        </a>
       </Footer>
     </Layout>
   );
