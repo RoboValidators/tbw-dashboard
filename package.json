@@ -10,7 +10,7 @@
     "@types/node": "12.20.13",
     "@types/react": "16.14.6",
     "@types/react-dom": "16.9.13",
-    "antd": "4.15.5",
+    "antd": "4.15.6",
     "axios": "0.21.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
